@@ -1,0 +1,31 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	margin: 60px auto;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+th, td {
+	padding: 6px 30px;
+}
+
+tbody > tr:nth-child(2n + 1) {
+	background-color: #e3e3e3;
+}
+
+tbody > tr:nth-child(2n) {
+	background-color: #efefef;
+}
+
+thead > tr {
+	background-color: #ccc;
+}
+
+table tr:hover {
+	cursor: pointer;
+	background-color: #ccc;
+}
