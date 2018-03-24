@@ -19,7 +19,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="test:${data}">
+				<tr th:each="test:${page.content}">
 					<td th:text="${test.id}">1</td>
 					<td><a th:href="@{'/test/page/find/' + ${test.id}}" th:text="${test.name}">tom</a></td>
 					<td th:text="${test.sex}">MALE</td>
@@ -30,5 +30,10 @@
 				</tr>
 			</tbody>
 		</table>
+		<div class="page">
+			<a th:class="${page.first ? 'disable' : ''}" th:href="@{'/test/page/all?page=' + ${page.number - 1}}">&lt;-- Prev</a>
+			<span th:inline="text">当前第 [[${page.number + 1}]] 页，共 [[${page.totalPages}]] 页</span>
+			<a th:class="${page.last ? 'disable' : ''}" th:href="@{'/test/page/all?page=' + ${page.number + 1}}">Next --&gt;</a>
+		</div>
 	</body>
 </html>

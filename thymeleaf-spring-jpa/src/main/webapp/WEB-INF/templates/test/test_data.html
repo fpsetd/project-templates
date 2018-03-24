@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>test data</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/static/css/base.css}">
+	</head>
+	<body>
+		<table>
+			<tbody>
+				<tr>
+					<td>id</td>
+					<td th:text="${data.id}">1</td>
+				</tr>
+				<tr>
+					<td>name</td>
+					<td th:text="${data.name}">tom</td>
+				</tr>
+				<tr>
+					<td>sex</td>
+					<td th:text="${data.sex}">MALE</td>
+				</tr>
+				<tr>
+					<td>birth</td>
+					<td th:text="${data.birth}">1994-06-21</td>
+				</tr>
+				<tr>
+					<td>vip</td>
+					<td th:text="${data.vip}">true</td>
+				</tr>
+				<tr>
+					<td>price</td>
+					<td th:text="${#numbers.formatDecimal(data.price, 1, 2)}">534.63</td>
+				</tr>
+				<tr>
+					<td>createTime</td>
+					<td th:text="${#temporals.format(data.createTime, 'yyyy-MM-dd HH:mm:ss')}">2018-03-07 15:31:24</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
